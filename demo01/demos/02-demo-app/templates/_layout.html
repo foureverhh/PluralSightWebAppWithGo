@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- replace by viewmodel.NewBase()
 <title>Lemonade Stand Supply</title>
+-->
+<title>{{.Title}}</title>
 <link href="/css/app.css" rel="stylesheet" />
 {{block "styles" .}}{{end}}
 </head>
@@ -11,9 +14,9 @@
 	
 	{{end}}
 	-->
-	{{template "_header.html"}}
-	{{template "content"}}
-    {{template "_footer.html"}}
+	{{template "_header.html" .}}
+	{{template "content" .}}
+    {{template "_footer.html" .}}
     {{block "script" .}}{{end}}
 </body>
 </html>

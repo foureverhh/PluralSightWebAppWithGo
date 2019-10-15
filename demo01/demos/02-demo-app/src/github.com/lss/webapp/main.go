@@ -6,6 +6,8 @@ import (
 
 	"net/http"
 	"os"
+
+	"pluralSightWebAppWithGo/demo01/demos/02-demo-app/src/github.com/lss/webapp/viewmodel"
 )
 
 func main() {
@@ -13,9 +15,12 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		requestedFile := r.URL.Path[1:]
 		//template := templates.Lookup(requestedFile + ".html")
-		template := templates[requestedFile + ".html"]
+		template := templates[requestedFile+".html"]
+		context := viewmodel.NewBase()
 		if template != nil {
-			template.Execute(w, nil)
+			//template.Execute(w, nil)
+			//add context to work as data cource
+			template.Execute(w, context)
 		} else {
 			w.WriteHeader(http.StatusNotFound)
 		}
@@ -45,15 +50,15 @@ func populateTemplates() map[string]*template.Template {
 		}
 		content, err := ioutil.ReadAll(f)
 		if err != nil {
-			panic("Failed to read content from file '"+file.Name()+"'")
+			panic("Failed to read content from file '" + file.Name() + "'")
 		}
 		f.Close()
 		teml := template.Must(layout.Clone())
 		_, err = teml.Parse(string(content))
 		if err != nil {
-			panic("Failed to parse contents of '"+file.Name()+"'")
+			panic("Failed to parse contents of '" + file.Name() + "'")
 		}
-		result[file.Name()] =teml
+		result[file.Name()] = teml
 	}
 	return result
 }
