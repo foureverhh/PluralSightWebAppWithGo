@@ -1,0 +1,98 @@
+{{define "content"}}
+	<div class="row categories">
+		<div class="columns small-10 small-offset-1">
+			<div class="row category orient-left">
+				<a href="{{(index .Categories 0).URL}}">
+					<div class="columns small-4">
+						<img src="/img/{{(index .Categories 0).ImageURL}}" alt="lemon" />
+					</div>
+					<div class="columns small-8">
+						<h2>{{(index .Categories 0).Title}}</h2>
+						<p>{{(index .Categories 0).Description}}</p>
+					</div>
+				</a>
+			</div>
+			<div class="row category orient-right">
+				<a href="{{(index .Categories 1).URL}}">
+				<div class="columns small-8">
+					<h2>{{(index .Categories 1).Title}}</h2>
+					<p>{{(index .Categories 1).Description}}</p>
+				</div>
+				<div class="columns small-4">
+					<img src="/img/{{(index .Categories 1).ImageURL}}" alt="kiwi" />
+				</div>
+				</a>
+			</div>
+			<div class="row category orient-left">
+				<a href="{{(index .Categories 2).URL}}">
+				<div class="columns small-4">
+					<img src="/img/{{(index .Categories 0).ImageURL}}" alt="pineapple" />
+				</div>
+				<div class="columns small-8">
+					<h2>{{(index .Categories 2).Title}}</h2>
+					<p>{{(index .Categories 2).Description}}</p>
+				</div>
+				</a>
+			</div>
+		</div>
+	</div>
+{{end}}
+<!--
+	<!DOCTYPE html>
+<html>
+<head>
+<title>Lemonade Stand Supply</title>
+<link href="/css/app.css" rel="stylesheet" />
+</head>
+<body>
+	{{template "_header.html"}}
+	<div class="row categories">
+		<div class="columns small-10 small-offset-1">
+			<div class="row category orient-left">
+				<a href="/shop_details.html">
+					<div class="columns small-4">
+						<img src="/img/lemon.png" alt="lemon" />
+					</div>
+					<div class="columns small-8">
+						<h2>Juices and Mixes</h2>
+						<p>Explore our wide assortment of juices and mixes expected by
+							today's lemonade stand clientelle. Now featuring a full line of
+							organic juices that are guaranteed to be obtained from trees that
+							have never been treated with pesticides or artificial
+							fertilizers.</p>
+					</div>
+				</a>
+			</div>
+			<div class="row category orient-right">
+				<div class="columns small-8">
+					<h2>Cups, Straws, and Other Supplies</h2>
+					<p>From paper cups to bio-degradable plastic to straws and
+						napkins, LSS is your source for the sundries that keep your stand
+						running smoothly.</p>
+				</div>
+				<div class="columns small-4">
+					<img src="/img/kiwi.png" alt="kiwi" />
+				</div>
+			</div>
+			<div class="row category orient-left">
+				<div class="columns small-4">
+					<img src="/img/pineapple.png" alt="pineapple" />
+				</div>
+				<div class="columns small-8">
+					<h2>Signs and Advertising</h2>
+					<p>Sure, you could just wait for people to find your stand
+						along the side of the road, but if you want to take it to the next
+						level, our premium line of advertising supplies.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="columns small-12 text-right social-media">
+			<span>Follow us</span> <img src="/img/social_media.png"
+				alt="social media" />
+		</div>
+	</div>
+</body>
+</html>
+-->

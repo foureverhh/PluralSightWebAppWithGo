@@ -8,6 +8,6 @@ type Base struct{
 //NewBase definition
 func NewBase() Base{
 	return Base{
-		Title: "Lemonad Stand Supply",
+		Title: "Lemonad Stand ",
 	}
 }

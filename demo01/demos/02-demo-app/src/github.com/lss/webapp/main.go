@@ -3,6 +3,7 @@ package main
 import (
 	"html/template"
 	"io/ioutil"
+	"log"
 
 	"net/http"
 	"os"
@@ -16,7 +17,16 @@ func main() {
 		requestedFile := r.URL.Path[1:]
 		//template := templates.Lookup(requestedFile + ".html")
 		template := templates[requestedFile+".html"]
-		context := viewmodel.NewBase()
+		//context := viewmodel.NewBase()
+		var context interface{}
+		switch requestedFile {
+		case "shop":
+			context = viewmodel.NewShop()
+			log.Println("I here in shop")
+		default:
+			context = viewmodel.NewBase()
+			log.Println("I here in base")
+		}
 		if template != nil {
 			//template.Execute(w, nil)
 			//add context to work as data cource
